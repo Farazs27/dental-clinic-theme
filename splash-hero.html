@@ -66,6 +66,7 @@
         /* 
          * Brand Logo - Your actual logo
          * Centered with white filter for contrast against dark green
+         * Initial state: hidden (GSAP will animate it in)
          */
         .brand-logo {
             max-width: 320px;
@@ -75,9 +76,8 @@
             z-index: 1;
             /* Make logo white for contrast */
             filter: brightness(0) invert(1);
-            /* Initial state for GSAP animation */
-            opacity: 0;
-            transform: translateY(40px);
+            /* Initial state - GSAP will handle the animation */
+            visibility: hidden;
         }
 
         /* Content below hero for scroll testing */
@@ -126,27 +126,26 @@
         // Register ScrollTrigger plugin
         gsap.registerPlugin(ScrollTrigger);
 
-        // Wait for DOM to be ready
-        document.addEventListener('DOMContentLoaded', () => {
+        // Wait for page to fully load (including images)
+        window.addEventListener('load', () => {
             // Select the logo element
             const logo = document.querySelector('.brand-logo');
+            
+            // Make logo visible but set initial GSAP state
+            gsap.set(logo, {
+                visibility: 'visible',
+                opacity: 0,
+                y: 40
+            });
 
-            // Create the lazy load animation
-            // Logo floats up and fades in on page load
+            // Animate: float up and fade in
+            // Duration: 1 second, Easing: power3.out (as requested)
             gsap.to(logo, {
                 opacity: 1,
                 y: 0,
                 duration: 1,
                 ease: 'power3.out',
-                delay: 0.3
-            });
-
-            // Subtle scale effect for extra polish
-            gsap.from(logo, {
-                scale: 0.96,
-                duration: 1.2,
-                ease: 'power3.out',
-                delay: 0.3
+                delay: 0.2
             });
         });
     </script>
