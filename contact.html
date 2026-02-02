@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Mondzorg Sloterweg</title>
+    <link rel="stylesheet" href="css/style.css?v=100">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a class="logo" href="index.html" aria-label="Mondzorg Sloterweg">
+                <img src="assets/logos/logo.png" alt="Mondzorg Sloterweg">
+            </a>
+            <ul class="nav-menu" id="primary-navigation">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="behandelingen.html">BEHANDELINGEN</a></li>
+                <li><a href="esthetische-analyse.html">SMILE MAKEOVER</a></li>
+                <li><a href="mondhygieniste.html">MONDHYGIËNISTE</a></li>
+                <li><a href="inschrijven.html">INSCHRIJVEN</a></li>
+                <li><a href="tarieven.html">TARIEVEN</a></li>
+                <li><a href="https://www.dentistfarbod.com" target="_blank" rel="noopener noreferrer">MONDVERZORGING SHOP</a></li>
+                <li><a href="team.html">ONS TEAM</a></li>
+                <li><a href="contact.html" class="active">CONTACT</a></li>
+            </ul>
+            <button class="hamburger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>CONTACT</h1>
+            <p>Wij staan voor u klaar</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>NEEM CONTACT MET ONS OP</h2>
+                <div class="divider"></div>
+                <p class="subtitle">
+                    Heeft u vragen of wilt u een afspraak maken? Neem gerust contact met ons op. 
+                    Wij helpen u graag verder.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>Contactgegevens</h3>
+                    
+                    <div class="contact-item">
+                        <h4>TELEFOON</h4>
+                        <p><a href="tel:+31615231259">+31 (0)6 15231259</a></p>
+                        <p style="font-size: 13px; color: var(--text-light);">
+                            Bereikbaar tijdens openingstijden
+                        </p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>E-MAIL</h4>
+                        <p><a href="mailto:info@mondzorgsloterweg.nl">info@mondzorgsloterweg.nl</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>ADRES</h4>
+                        <p>Mondzorg Sloterweg</p>
+                        <p>Sloterweg 1160</p>
+                        <p>1066 CV Amsterdam</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>OPENINGSTIJDEN</h4>
+                        <p>Maandag & Dinsdag: 09:00 - 17:00</p>
+                        <p>Woensdag: Gesloten</p>
+                        <p>Donderdag & Vrijdag: 09:00 - 17:00</p>
+                        <p>Zaterdag & Zondag: Gesloten</p>
+                        <p style="font-size: 13px; color: var(--primary-gold); margin-top: 10px;">
+                            Spoed: Alleen op afspraak
+                        </p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h4>SPOEDZORG</h4>
+                        <p>
+                            Bij acute tandpijn of een tandheelkundig noodgeval kunt u ons direct bellen. 
+                            Wij proberen spoedgevallen binnen 24 uur te helpen.
+                        </p>
+                        <div style="margin-top: 15px;">
+                            <a href="tel:+31615231259" class="btn btn-primary btn-sm">BEL VOOR SPOED</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="2b1ab27e-2620-4a1b-9a13-fd49e568795f">
+                        
+                        <!-- Hidden fields -->
+                        <input type="hidden" name="subject" value="Nieuw Contactbericht via Website">
+                        <input type="hidden" name="from_name" value="Mondzorg Sloterweg Website">
+                        <input type="hidden" name="botcheck" class="hidden" style="display: none;">
+                        
+                        <h3 style="margin-bottom: 30px; color: var(--primary-dark);">Stel uw vraag</h3>
+                        
+                        <div class="form-group">
+                            <label for="name">Naam *</label>
+                            <input type="text" id="name" name="Naam" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-mailadres *</label>
+                            <input type="email" id="email" name="Email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telefoonnummer</label>
+                            <input type="tel" id="phone" name="Telefoonnummer">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Onderwerp *</label>
+                            <select id="subject" name="Onderwerp" required>
+                                <option value="">Selecteer een onderwerp</option>
+                                <option value="Afspraak maken">Afspraak maken</option>
+                                <option value="Algemene vraag">Algemene vraag</option>
+                                <option value="Behandeling informatie">Behandeling informatie</option>
+                                <option value="Verzekering">Verzekering</option>
+                                <option value="Tarieven">Tarieven</option>
+                                <option value="Spoedzorg">Spoedzorg</option>
+                                <option value="Klacht">Klacht</option>
+                                <option value="Anders">Anders</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Bericht *</label>
+                            <textarea id="message" name="Bericht" required placeholder="Typ hier uw vraag of opmerking..."></textarea>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="Privacy akkoord" value="Ja" required>
+                                Ik ga akkoord met de <a href="#" style="color: var(--primary-gold);">privacy policy</a> *
+                            </label>
+                        </div>
+
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary" id="contactSubmitBtn">VERSTUUR BERICHT</button>
+                        </div>
+                        
+                        <!-- Success/Error Messages -->
+                        <div id="contactFormMessage" style="display: none; margin-top: 30px; padding: 20px; border-radius: 12px; text-align: center;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>LOCATIE</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="map-container">
+                <!-- Google Maps Embed - Replace with actual embed code -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2434.8634773891374!2d4.798785315756!3d52.36483597978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5e2b0c5b8b8b1%3A0x1234567890abcdef!2sSloterweg%201160%2C%201066%20CV%20Amsterdam!5e0!3m2!1snl!2snl!4v1234567890123!5m2!1snl!2snl" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="location-info">
+                <div class="location-details">
+                    <h3>Bereikbaarheid</h3>
+                    <div class="location-grid">
+                        <div class="location-item">
+                            <h4>Met de Auto</h4>
+                            <p>
+                                Mondzorg Sloterweg is gemakkelijk bereikbaar via de A10. Neem afslag S105 (Sloterdijk) 
+                                en volg de Sloterweg. Er is gratis parkeren beschikbaar direct voor de deur.
+                            </p>
+                        </div>
+                        <div class="location-item">
+                            <h4>Met het Openbaar Vervoer</h4>
+                            <p>
+                                Bushalte Sloterweg is op loopafstand (2 minuten). Lijnen 19, 21 en 269 stoppen hier. 
+                                Vanaf Station Sloterdijk is het 10 minuten met de bus.
+                            </p>
+                        </div>
+                        <div class="location-item">
+                            <h4>Met de Fiets</h4>
+                            <p>
+                                Er zijn fietsenstallingen beschikbaar bij de praktijk. De locatie is goed bereikbaar 
+                                via de fietspaden langs de Sloterweg.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>VEELGESTELDE VRAGEN</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>Hoe maak ik een afspraak?</h4>
+                    <p>
+                        U kunt op verschillende manieren een afspraak maken: telefonisch via +31 (0)6 15231259, 
+                        per e-mail via info@mondzorgsloterweg.nl, of via het online inschrijfformulier op onze website.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h4>Wat moet ik meenemen naar mijn eerste afspraak?</h4>
+                    <p>
+                        Neem uw identiteitsbewijs en uw zorgpas mee. Als u een verwijzing heeft van een andere tandarts, 
+                        neem deze dan ook mee. Voor spoedgevallen is het handig om eventuele medicijnlijsten bij de hand te hebben.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h4>Zijn jullie gecontracteerd bij mijn zorgverzekeraar?</h4>
+                    <p>
+                        Wij zijn gecontracteerd bij de meeste Nederlandse zorgverzekeraars. Neem voor zekerheid contact op 
+                        met uw verzekeraar of vraag het ons tijdens het maken van de afspraak.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h4>Kan ik bij jullie terecht voor spoedzorg?</h4>
+                    <p>
+                        Ja, bij acute tandpijn of een tandheelkundig noodgeval proberen we u binnen 24 uur te helpen. 
+                        Bel ons direct voor spoedzorg: +31 (0)6 15231259.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h4>Is er parkeergelegenheid?</h4>
+                    <p>
+                        Ja, er is gratis parkeerruimte beschikbaar direct voor de deur van onze praktijk. 
+                        U hoeft zich geen zorgen te maken over parkeerkosten.
+                    </p>
+                </div>
+                <div class="faq-item">
+                    <h4>Bieden jullie ook avondopenstelling?</h4>
+                    <p>
+                        Momenteel zijn wij geopend van maandag t/m vrijdag (behalve woensdag) van 09:00 tot 17:00 uur. 
+                        Voor bijzondere gevallen kunnen we proberen een afspraak buiten deze tijden in te plannen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Klaar om uw glimlach te transformeren?</h2>
+            <p>Maak vandaag nog een afspraak voor een vrijblijvend consult</p>
+            <div class="cta-buttons">
+                <a href="inschrijven.html" class="btn btn-primary">MAAK AFSPRAAK</a>
+                <a href="tel:+31615231259" class="btn btn-secondary">BEL NU</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Feeds -->
+    <section class="social-feeds">
+        <div class="container">
+            <div class="social-feeds-header">
+                <span class="social-title">F O L L O W &nbsp; U S &nbsp; O N &nbsp; S O C I A L &nbsp; M E D I A</span>
+            </div>
+            
+            <div class="social-feeds-grid">
+                <!-- Instagram Feed -->
+                <div class="social-feed-item">
+                    <div class="feed-header">
+                        <a href="https://www.instagram.com/dentistfarbod/" target="_blank" rel="noopener" class="social-follow-btn instagram-btn">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            Follow on Instagram
+                        </a>
+                    </div>
+                    <!-- Elfsight Instagram Feed | @dentistfarbod -->
+                    <div class="elfsight-app-ad20eb76-d7b3-4835-a6a2-314778382dc2" data-elfsight-app-lazy></div>
+                </div>
+
+                <!-- TikTok Feed -->
+                <div class="social-feed-item">
+                    <div class="feed-header">
+                        <a href="https://www.tiktok.com/@dentistfarbod" target="_blank" rel="noopener" class="social-follow-btn tiktok-btn">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            </svg>
+                            Follow on TikTok
+                        </a>
+                    </div>
+                    <!-- Elfsight TikTok Feed | Untitled TikTok Feed -->
+                    <div class="elfsight-app-18d9fa2a-d0ff-4404-b9bb-a3128da29b20" data-elfsight-app-lazy></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>CONTACT</h3>
+                    <p><a href="tel:+31615231259">+31 (0)6 15231259</a></p>
+                    <p><a href="mailto:info@mondzorgsloterweg.nl">info@mondzorgsloterweg.nl</a></p>
+                </div>
+                <div class="footer-col">
+                    <h3>LOCATIE</h3>
+                    <p>Mondzorg Sloterweg</p>
+                    <p>Sloterweg 1160</p>
+                    <p>1066 CV Amsterdam</p>
+                    <p>Gratis Parkeren</p>
+                </div>
+                <div class="footer-col">
+                    <h3>OPENINGSTIJDEN</h3>
+                    <p>Maandag & Dinsdag: 09:00-17:00</p>
+                    <p>Woensdag: gesloten</p>
+                    <p>Donderdag & Vrijdag: 09:00-17:00</p>
+                    <p>Zaterdag & Zondag: Gesloten</p>
+                    <p>Spoed: Alleen op afspraak</p>
+                </div>
+                <div class="footer-col">
+                    <h3>MAAK EEN AFSPRAAK</h3>
+                    <a href="inschrijven.html" class="btn btn-outline-light">BEKIJK BEHANDELINGEN</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mondzorg Sloterweg - <a href="#">Algemene voorwaarden</a> - <a href="#">Privacy policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Appointment Buttons -->
+    <div class="sticky-appointment" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; display: flex; justify-content: center; gap: 12px; padding: 14px 24px; background: rgba(255,255,255,0.95); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); box-shadow: 0 -8px 32px rgba(0,0,0,0.12);">
+        <a href="inschrijven.html#algemene" class="btn btn-secondary" onclick="if(window.location.pathname.includes('inschrijven.html')){event.preventDefault();selectOption('algemene');}">ALGEMENE TANDHEELKUNDE</a>
+        <a href="https://form.typeform.com/to/Zt7viLwa?typeform-source=mondzorgsloterweg.nl" class="btn btn-primary" target="_blank" rel="noopener noreferrer">COSMETISCH & RESTAURATIEF</a>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/31615231259" class="floating-whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat met ons op WhatsApp" style="position: fixed; bottom: 120px; right: 30px; z-index: 10000; width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, rgba(37, 211, 102, 0.25) 0%, rgba(37, 211, 102, 0.1) 50%, rgba(37, 211, 102, 0.05) 100%); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border: 2px solid rgba(37, 211, 102, 0.25); box-shadow: 0 8px 32px rgba(37, 211, 102, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="rgba(37, 211, 102, 0.85)"/>
+        </svg>
+    </a>
+
+    <!-- Elfsight Widgets -->
+    <script src="https://elfsightcdn.com/platform.js" defer></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Handle contact form submission with AJAX
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const submitBtn = document.getElementById('contactSubmitBtn');
+                const formMessage = document.getElementById('contactFormMessage');
+                const originalBtnText = submitBtn.textContent;
+                
+                // Disable button and show loading state
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'VERZENDEN...';
+                submitBtn.style.opacity = '0.6';
+                formMessage.style.display = 'none';
+                
+                try {
+                    const formData = new FormData(contactForm);
+                    
+                    // Send all fields directly to Web3Forms
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        // Success
+                        formMessage.style.display = 'block';
+                        formMessage.style.background = 'linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%)';
+                        formMessage.style.color = '#155724';
+                        formMessage.style.border = '2px solid #c3e6cb';
+                        formMessage.innerHTML = `
+                            <h3 style="margin: 0 0 10px 0; color: #155724;">✓ Bericht Verzonden!</h3>
+                            <p style="margin: 0;">Bedankt voor uw bericht. We nemen zo spoedig mogelijk contact met u op.</p>
+                        `;
+                        
+                        // Reset form
+                        contactForm.reset();
+                        
+                        // Scroll to message
+                        setTimeout(() => {
+                            formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }, 100);
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    // Error
+                    formMessage.style.display = 'block';
+                    formMessage.style.background = 'linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%)';
+                    formMessage.style.color = '#721c24';
+                    formMessage.style.border = '2px solid #f5c6cb';
+                    formMessage.innerHTML = `
+                        <h3 style="margin: 0 0 10px 0; color: #721c24;">✗ Er is iets misgegaan</h3>
+                        <p style="margin: 0;">Probeer het later opnieuw of bel ons: <a href="tel:+31615231259" style="color: #721c24; text-decoration: underline;">+31 (0)6 15231259</a></p>
+                    `;
+                    
+                    // Scroll to message
+                    setTimeout(() => {
+                        formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 100);
+                } finally {
+                    // Re-enable button
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.style.opacity = '1';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+

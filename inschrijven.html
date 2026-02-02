@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inschrijven - Mondzorg Sloterweg</title>
+    <link rel="stylesheet" href="css/style.css?v=100">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a class="logo" href="index.html" aria-label="Mondzorg Sloterweg">
+                <img src="assets/logos/logo.png" alt="Mondzorg Sloterweg">
+            </a>
+            <ul class="nav-menu" id="primary-navigation">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="behandelingen.html">BEHANDELINGEN</a></li>
+                <li><a href="esthetische-analyse.html">SMILE MAKEOVER</a></li>
+                <li><a href="mondhygieniste.html">MONDHYGIËNISTE</a></li>
+                <li><a href="inschrijven.html" class="active">INSCHRIJVEN</a></li>
+                <li><a href="tarieven.html">TARIEVEN</a></li>
+                <li><a href="https://www.dentistfarbod.com" target="_blank" rel="noopener noreferrer">MONDVERZORGING SHOP</a></li>
+                <li><a href="team.html">ONS TEAM</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+            <button class="hamburger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>INSCHRIJVEN</h1>
+            <p>Word patiënt bij Mondzorg Sloterweg</p>
+        </div>
+    </section>
+
+    <!-- Selection Funnel -->
+    <section class="selection-funnel" id="selectionFunnel">
+        <div class="container">
+            <div class="section-header">
+                <h2>Kies hieronder welk zorgtraject het beste aansluit op uw wensen.</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="funnel-options">
+                <div class="funnel-card" data-option="algemene">
+                    <h3>Algemene Tandheelkunde</h3>
+                    <p>Voor algemene mondzorg, controles en dagelijkse tandheelkundige zorg.</p>
+                    <p style="margin-top: 20px; font-weight: 500;">U kunt hier terecht voor:</p>
+                    <ul class="funnel-services">
+                        <li>Periodieke controles</li>
+                        <li>Röntgenfoto's</li>
+                        <li>Mondhygiëne</li>
+                        <li>Vullingen</li>
+                        <li>Pijnklachten</li>
+                        <li>Esthetische basisbehandelingen</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectOption('algemene')">Algemene Tandheelkunde</button>
+                </div>
+                <div class="funnel-card" data-option="mondhygieniste">
+                    <h3>Mondhygiëniste</h3>
+                    <p>Voor professionele tandenreiniging en parodontale zorg bij onze ervaren mondhygiëniste.</p>
+                    <p style="margin-top: 20px; font-weight: 500;">U kunt hier terecht voor:</p>
+                    <ul class="funnel-services">
+                        <li>Professionele tandenreiniging</li>
+                        <li>Parodontale behandeling</li>
+                        <li>Behandeling tandvleesontsteking</li>
+                        <li>Preventieve mondzorg</li>
+                        <li>Advies & voorlichting</li>
+                        <li>Mondhygiëne controle</li>
+                    </ul>
+                    <button class="btn btn-primary" onclick="selectOption('mondhygieniste')">Mondhygiëniste</button>
+                </div>
+                <div class="funnel-card" data-option="cosmetische">
+                    <h3>Cosmetische & Restauratieve Tandheelkunde</h3>
+                    <p>Voor patiënten die hoogwaardige, esthetische of duurzame oplossingen zoeken.</p>
+                    <p style="margin-top: 20px; font-weight: 500;">U kunt hier terecht voor:</p>
+                    <ul class="funnel-services">
+                        <li>Restauratieve behandelingen</li>
+                        <li>Cosmetische verbeteringen</li>
+                        <li>Porseleinen facings</li>
+                        <li>Complexe behandelplannen</li>
+                        <li>Slijtage, breuken of oude restauraties</li>
+                        <li>Smile design</li>
+                        <li>Second opinions</li>
+                    </ul>
+                    <a href="https://form.typeform.com/to/Zt7viLwa?typeform-source=mondzorgsloterweg.nl" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Cosmetische & Restauratieve Tandheelkunde</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Introduction (shown only for Algemene Tandheelkunde) -->
+    <section class="form-intro" id="formIntro" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <button class="back-button" onclick="goBackToSelection()" style="margin-bottom: 30px; background: none; border: 1px solid var(--charcoal); color: var(--charcoal); padding: 10px 20px; cursor: pointer; font-family: var(--font-body); font-size: 14px; letter-spacing: 0.1em;">← Terug naar keuze</button>
+                <h2>MAAK EEN AFSPRAAK</h2>
+                <div class="divider"></div>
+                <p class="subtitle">
+                    Vul onderstaand formulier in en wij nemen binnen 24 uur contact met u op om een afspraak in te plannen. 
+                    Voor spoedgevallen kunt u ons direct bereiken op <a href="tel:+31615231259" style="color: var(--accent);">+31 (0)6 15231259</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form (shown only for Algemene Tandheelkunde) -->
+    <section class="form-section" id="formSection" style="display: none;">
+        <div class="container">
+            <div class="form-container">
+                <form id="registrationForm" class="registration-form" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- Web3Forms Access Key (Public Key) -->
+                    <input type="hidden" name="access_key" value="091035bc-80d6-4002-9d1e-9d376eb46c87">
+                    
+                    <!-- Hidden field for destination email settings -->
+                    <input type="hidden" name="subject" value="Nieuwe Inschrijving - Algemene Tandheelkunde">
+                    <input type="hidden" name="from_name" value="Mondzorg Sloterweg Website">
+                    <input type="hidden" name="botcheck" class="hidden" style="display: none;">
+                    
+                    <!-- Redirect after submission -->
+                    <input type="hidden" name="redirect" value="https://new-v3-website-mondzorg-sloterweg.vercel.app/inschrijven.html?success=true">
+                    
+                    <h3 style="margin-bottom: 40px; text-align: center; color: var(--primary-dark);">Persoonlijke Gegevens</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Voornaam *</label>
+                            <input type="text" id="firstName" name="Naam" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Achternaam *</label>
+                            <input type="text" id="lastName" name="Achternaam" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">E-mailadres *</label>
+                            <input type="email" id="email" name="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefoonnummer *</label>
+                            <input type="tel" id="phone" name="Telefoonnummer" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birthdate">Geboortedatum *</label>
+                        <input type="date" id="birthdate" name="Geboortedatum" required>
+                    </div>
+
+                    <h3 style="margin: 50px 0 30px; text-align: center; color: var(--primary-dark);">Adresgegevens</h3>
+
+                    <div class="form-group">
+                        <label for="street">Straat *</label>
+                        <input type="text" id="street" name="Straat" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="houseNumber">Huisnummer *</label>
+                            <input type="text" id="houseNumber" name="Huisnummer" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="addition">Toevoeging</label>
+                            <input type="text" id="addition" name="Toevoeging">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="zipCode">Postcode *</label>
+                            <input type="text" id="zipCode" name="Postcode" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Plaats *</label>
+                            <input type="text" id="city" name="Plaats" required>
+                        </div>
+                    </div>
+
+                    <h3 style="margin: 50px 0 30px; text-align: center; color: var(--primary-dark);">Behandeling & Voorkeuren</h3>
+
+                    <div class="form-group">
+                        <label for="treatment">Type behandeling / reden van afspraak *</label>
+                        <select id="treatment" name="Klacht/reden voor uw bezoek" required>
+                            <!-- Options will be populated by JavaScript based on selection -->
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preferredDate">Gewenste datum (indicatie)</label>
+                        <input type="date" id="preferredDate" name="Gewenste datum">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preferredTime">Voorkeurstijd</label>
+                        <select id="preferredTime" name="Voorkeurstijd">
+                            <option value="">Selecteer een voorkeurstijd</option>
+                            <option value="Ochtend">Ochtend (09:00 - 12:00)</option>
+                            <option value="Middag">Middag (12:00 - 15:00)</option>
+                            <option value="Avond">Avond (15:00 - 17:00)</option>
+                            <option value="Geen voorkeur">Geen voorkeur</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="previousDentist">Huidige/vorige tandarts (indien van toepassing)</label>
+                        <input type="text" id="previousDentist" name="Vorige tandarts">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="referral">Hoe heeft u ons gevonden?</label>
+                        <select id="referral" name="Hoe heeft u ons gevonden">
+                            <option value="">Selecteer een optie</option>
+                            <option value="Google">Google / zoekmachine</option>
+                            <option value="Social Media">Social media (Instagram, TikTok, Facebook)</option>
+                            <option value="Aanbeveling">Aanbeveling van bekenden</option>
+                            <option value="Huisarts">Verwijzing huisarts</option>
+                            <option value="Anders">Anders</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comments">Aanvullende opmerkingen of vragen</label>
+                        <textarea id="comments" name="Opmerkingen" placeholder="Heeft u nog specifieke vragen of opmerkingen? Laat het ons weten!"></textarea>
+                    </div>
+
+                    <h3 style="margin: 50px 0 30px; text-align: center; color: var(--primary-dark);">Akkoord & Toestemming</h3>
+
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="Algemene voorwaarden" value="Akkoord" required>
+                            Ik ga akkoord met de <a href="#" style="color: var(--primary-gold);">algemene voorwaarden</a> *
+                        </label>
+                        <label>
+                            <input type="checkbox" name="Privacy policy" value="Akkoord" required>
+                            Ik heb de <a href="#" style="color: var(--primary-gold);">privacy policy</a> gelezen en begrepen *
+                        </label>
+                        <label>
+                            <input type="checkbox" name="Nieuwsbrief" value="Ja">
+                            Ik wil graag de nieuwsbrief ontvangen met tips en aanbiedingen
+                        </label>
+                        <label>
+                            <input type="checkbox" name="Contact toestemming" value="Akkoord" required>
+                            Ik geef toestemming om contact met mij op te nemen voor het maken van een afspraak *
+                        </label>
+                    </div>
+
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary" id="submitBtn">VERZENDEN</button>
+                        <p style="margin-top: 20px; font-size: 13px; color: var(--text-light);">
+                            * Verplichte velden. Uw gegevens worden vertrouwelijk behandeld.
+                        </p>
+                    </div>
+                    
+                    <!-- Success/Error Messages -->
+                    <div id="formMessage" style="display: none; margin-top: 30px; padding: 20px; border-radius: 12px; text-align: center;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Info Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Nieuwe Patiënten Welkom</h3>
+                    <p>
+                        Wij staan altijd open voor nieuwe patiënten. Of u nu op zoek bent naar een nieuwe vaste tandarts, 
+                        een second opinion wenst, of een specifieke behandeling nodig heeft - u bent van harte welkom bij Mondzorg Sloterweg.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3>Eerste Consult</h3>
+                    <p>
+                        Tijdens uw eerste bezoek maken we uitgebreid kennis. We voeren een grondig onderzoek uit, 
+                        bespreken uw wensen en verwachtingen, en stellen samen met u een behandelplan op dat perfect 
+                        aansluit bij uw situatie.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3>Spoedzorg</h3>
+                    <p>
+                        Heeft u acute tandpijn of een tandheelkundig noodgeval? Neem dan direct telefonisch contact 
+                        met ons op via <a href="tel:+31615231259" style="color: var(--primary-gold);">+31 (0)6 15231259</a>. 
+                        Wij proberen spoedgevallen binnen 24 uur te helpen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Feeds -->
+    <section class="social-feeds">
+        <div class="container">
+            <div class="social-feeds-header">
+                <span class="social-title">F O L L O W &nbsp; U S &nbsp; O N &nbsp; S O C I A L &nbsp; M E D I A</span>
+            </div>
+            
+            <div class="social-feeds-grid">
+                <!-- Instagram Feed -->
+                <div class="social-feed-item">
+                    <div class="feed-header">
+                        <a href="https://www.instagram.com/dentistfarbod/" target="_blank" rel="noopener" class="social-follow-btn instagram-btn">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            Follow on Instagram
+                        </a>
+                    </div>
+                    <!-- Elfsight Instagram Feed | @dentistfarbod -->
+                    <div class="elfsight-app-ad20eb76-d7b3-4835-a6a2-314778382dc2" data-elfsight-app-lazy></div>
+                </div>
+
+                <!-- TikTok Feed -->
+                <div class="social-feed-item">
+                    <div class="feed-header">
+                        <a href="https://www.tiktok.com/@dentistfarbod" target="_blank" rel="noopener" class="social-follow-btn tiktok-btn">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            </svg>
+                            Follow on TikTok
+                        </a>
+                    </div>
+                    <!-- Elfsight TikTok Feed | Untitled TikTok Feed -->
+                    <div class="elfsight-app-18d9fa2a-d0ff-4404-b9bb-a3128da29b20" data-elfsight-app-lazy></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>CONTACT</h3>
+                    <p><a href="tel:+31615231259">+31 (0)6 15231259</a></p>
+                    <p><a href="mailto:info@mondzorgsloterweg.nl">info@mondzorgsloterweg.nl</a></p>
+                </div>
+                <div class="footer-col">
+                    <h3>LOCATIE</h3>
+                    <p>Mondzorg Sloterweg</p>
+                    <p>Sloterweg 1160</p>
+                    <p>1066 CV Amsterdam</p>
+                    <p>Gratis Parkeren</p>
+                </div>
+                <div class="footer-col">
+                    <h3>OPENINGSTIJDEN</h3>
+                    <p>Maandag & Dinsdag: 09:00-17:00</p>
+                    <p>Woensdag: gesloten</p>
+                    <p>Donderdag & Vrijdag: 09:00-17:00</p>
+                    <p>Zaterdag & Zondag: Gesloten</p>
+                    <p>Spoed: Alleen op afspraak</p>
+                </div>
+                <div class="footer-col">
+                    <h3>MAAK EEN AFSPRAAK</h3>
+                    <a href="inschrijven.html" class="btn btn-outline-light">BEKIJK BEHANDELINGEN</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mondzorg Sloterweg - <a href="#">Algemene voorwaarden</a> - <a href="#">Privacy policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Elfsight Widgets -->
+    <script src="https://elfsightcdn.com/platform.js" defer></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Handle option selection
+        function selectOption(option) {
+            const selectionFunnel = document.getElementById('selectionFunnel');
+            const formIntro = document.getElementById('formIntro');
+            const formSection = document.getElementById('formSection');
+            const subjectField = document.querySelector('input[name="subject"]');
+            const accessKeyField = document.querySelector('input[name="access_key"]');
+            const treatmentSelect = document.getElementById('treatment');
+            
+            // Hide selection funnel
+            selectionFunnel.style.display = 'none';
+            
+            if (option === 'algemene') {
+                // Update subject and access key for Algemene Tandheelkunde
+                if (subjectField) {
+                    subjectField.value = 'Nieuwe Inschrijving - Algemene Tandheelkunde';
+                }
+                if (accessKeyField) {
+                    accessKeyField.value = '091035bc-80d6-4002-9d1e-9d376eb46c87';
+                }
+                
+                // Populate treatment options for Algemene Tandheelkunde
+                if (treatmentSelect) {
+                    treatmentSelect.innerHTML = `
+                        <option value="">Selecteer een optie</option>
+                        <option value="Controle">Controle & Preventie</option>
+                        <option value="Mondhygiëne">Mondhygiënist / Reiniging</option>
+                        <option value="Kiespijn">Kiespijn / Spoedgeval</option>
+                        <option value="Vulling">Vulling of restauratie</option>
+                        <option value="Esthetisch">Esthetische tandheelkunde (veneers, bleaching)</option>
+                        <option value="Implantaat">Implantaat</option>
+                        <option value="Orthodontie">Orthodontie (Invisalign / beugel)</option>
+                        <option value="Kroon">Kroon of brug</option>
+                        <option value="Wortelkanaal">Wortelkanaalbehandeling</option>
+                        <option value="Anders">Anders</option>
+                    `;
+                }
+                
+                // Show form
+                formIntro.style.display = 'block';
+                formSection.style.display = 'block';
+                
+                // Scroll to form
+                setTimeout(() => {
+                    formIntro.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            } else if (option === 'mondhygieniste') {
+                // Update subject and access key for Mondhygiëniste
+                if (subjectField) {
+                    subjectField.value = 'Nieuwe Inschrijving - Mondhygiëniste';
+                }
+                if (accessKeyField) {
+                    accessKeyField.value = 'd9a9a756-0a3d-4f8b-a1be-3c061458c9e7';
+                }
+                
+                // Populate treatment options for Mondhygiëniste
+                if (treatmentSelect) {
+                    treatmentSelect.innerHTML = `
+                        <option value="">Selecteer een optie</option>
+                        <option value="Professionele tandenreiniging">Professionele tandenreiniging</option>
+                        <option value="Parodontale behandeling">Parodontale behandeling (tandvleesbehandeling)</option>
+                        <option value="Tandvleesontsteking">Behandeling tandvleesontsteking</option>
+                        <option value="Preventieve controle">Preventieve mondzorg controle</option>
+                        <option value="Advies mondverzorging">Advies & voorlichting mondverzorging</option>
+                        <option value="Bloedend tandvlees">Bloedend tandvlees</option>
+                        <option value="Tandsteen verwijderen">Tandsteen verwijderen</option>
+                        <option value="Anders">Anders</option>
+                    `;
+                }
+                
+                // Show form
+                formIntro.style.display = 'block';
+                formSection.style.display = 'block';
+                
+                // Scroll to form
+                setTimeout(() => {
+                    formIntro.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+        }
+        
+        // Go back to selection
+        function goBackToSelection() {
+            const selectionFunnel = document.getElementById('selectionFunnel');
+            const formIntro = document.getElementById('formIntro');
+            const formSection = document.getElementById('formSection');
+            
+            // Show selection funnel
+            selectionFunnel.style.display = 'block';
+            
+            // Hide all forms
+            formIntro.style.display = 'none';
+            formSection.style.display = 'none';
+            
+            // Scroll to top
+            setTimeout(() => {
+                selectionFunnel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+
+        // Check if page loaded with #algemene anchor and auto-select
+        window.addEventListener('DOMContentLoaded', function() {
+            if (window.location.hash === '#algemene') {
+                // Small delay to ensure DOM is ready
+                setTimeout(() => {
+                    selectOption('algemene');
+                }, 300);
+            }
+        });
+
+        // Handle form submission with AJAX
+        const registrationForm = document.getElementById('registrationForm');
+        if (registrationForm) {
+            registrationForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const submitBtn = document.getElementById('submitBtn');
+                const formMessage = document.getElementById('formMessage');
+                const originalBtnText = submitBtn.textContent;
+                
+                // Disable button and show loading state
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'VERZENDEN...';
+                submitBtn.style.opacity = '0.6';
+                formMessage.style.display = 'none';
+                
+                try {
+                    const formData = new FormData(registrationForm);
+                    
+                    // Send all fields directly to Web3Forms
+                    const response = await fetch(registrationForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    const result = await response.json();
+                    console.log('Form submission result:', result);
+                    
+                    if (response.ok && result.success) {
+                        // Success
+                        formMessage.style.display = 'block';
+                        formMessage.style.background = 'linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%)';
+                        formMessage.style.color = '#155724';
+                        formMessage.style.border = '2px solid #c3e6cb';
+                        formMessage.innerHTML = `
+                            <h3 style="margin: 0 0 10px 0; color: #155724;">✓ Inschrijving Succesvol!</h3>
+                            <p style="margin: 0;">Bedankt voor uw inschrijving. We nemen zo spoedig mogelijk contact met u op om een afspraak in te plannen.</p>
+                        `;
+                        
+                        // Reset form
+                        registrationForm.reset();
+                        
+                        // Scroll to message
+                        setTimeout(() => {
+                            formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }, 100);
+                    } else {
+                        throw new Error(result.message || 'Form submission failed');
+                    }
+                } catch (error) {
+                    console.error('Form submission error:', error);
+                    // Error
+                    formMessage.style.display = 'block';
+                    formMessage.style.background = 'linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%)';
+                    formMessage.style.color = '#721c24';
+                    formMessage.style.border = '2px solid #f5c6cb';
+                    formMessage.innerHTML = `
+                        <h3 style="margin: 0 0 10px 0; color: #721c24;">✗ Er is iets misgegaan</h3>
+                        <p style="margin: 0 0 10px 0;">${error.message === 'Form submission failed' ? 'Controleer uw internetverbinding en probeer het opnieuw.' : 'Foutmelding: ' + error.message}</p>
+                        <p style="margin: 0;">Of neem telefonisch contact met ons op: <a href="tel:+31615231259" style="color: #721c24; text-decoration: underline;">+31 (0)6 15231259</a></p>
+                    `;
+                    
+                    // Scroll to message
+                    setTimeout(() => {
+                        formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 100);
+                } finally {
+                    // Re-enable button
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.style.opacity = '1';
+                }
+            });
+        }
+    </script>
+
+    <!-- Floating Call Button -->
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/31615231259" class="floating-whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat met ons op WhatsApp" style="position: fixed; bottom: 120px; right: 30px; z-index: 10000; width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, rgba(37, 211, 102, 0.25) 0%, rgba(37, 211, 102, 0.1) 50%, rgba(37, 211, 102, 0.05) 100%); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border: 2px solid rgba(37, 211, 102, 0.25); box-shadow: 0 8px 32px rgba(37, 211, 102, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3); display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="rgba(37, 211, 102, 0.85)"/>
+        </svg>
+    </a>
+
+    <!-- Sticky Appointment Buttons -->
+    <div class="sticky-appointment" style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; display: flex; justify-content: center; gap: 12px; padding: 14px 24px; background: rgba(255,255,255,0.95); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); box-shadow: 0 -8px 32px rgba(0,0,0,0.12);">
+        <a href="#algemene" class="btn btn-secondary" onclick="event.preventDefault();selectOption('algemene');">ALGEMENE TANDHEELKUNDE</a>
+        <a href="https://form.typeform.com/to/Zt7viLwa?typeform-source=mondzorgsloterweg.nl" class="btn btn-primary" target="_blank" rel="noopener noreferrer">COSMETISCH & RESTAURATIEF</a>
+    </div>
+</body>
+</html>
+
