@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Splash Hero - Etiq Style Animation</title>
+    <title>Splash Hero - Etiq Style</title>
     <style>
         /* Reset */
         *, *::before, *::after {
@@ -14,6 +14,9 @@
 
         :root {
             --vh: 1vh;
+            --primary-green: #1c3f3a;
+            --cream: #faf9f6;
+            --accent: #c9a67a;
         }
 
         html {
@@ -22,16 +25,14 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #1c3f3a;
+            background-color: var(--primary-green);
             color: #fff;
             overflow-x: hidden;
         }
 
         /* ============================================
-         * HERO SECTION (Etiq-style)
-         * - Fixed position, stays behind content
-         * - Dark green background (#1c3f3a)
-         * - Logo centered with fade-up animation
+         * HERO SECTION - Etiq Style
+         * Fixed position with animated fluid background
          * ============================================ */
         .hero-section {
             position: fixed;
@@ -40,61 +41,121 @@
             width: 100%;
             height: 100vh;
             height: calc(var(--vh, 1vh) * 100);
-            background-color: #1c3f3a;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            background-color: var(--primary-green);
             z-index: 1;
             overflow: hidden;
         }
 
-        /* Etiq-style subtle radial glow */
-        .hero-section::before {
-            content: '';
+        /* Animated fluid background - CSS version of etiq's video */
+        .fluid-background {
             position: absolute;
-            top: 50%;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        /* Organic flowing shapes */
+        .fluid-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .fluid-shape-1 {
+            width: 60vw;
+            height: 60vw;
+            background: linear-gradient(135deg, #8b5a2b 0%, #c9a67a 50%, #d4a574 100%);
+            top: -20%;
+            left: -20%;
+            animation-delay: 0s;
+        }
+
+        .fluid-shape-2 {
+            width: 50vw;
+            height: 50vw;
+            background: linear-gradient(225deg, #a0522d 0%, #cd853f 50%, #deb887 100%);
+            bottom: -30%;
+            right: -15%;
+            animation-delay: -5s;
+            animation-duration: 25s;
+        }
+
+        .fluid-shape-3 {
+            width: 40vw;
+            height: 40vw;
+            background: linear-gradient(45deg, #8b4513 0%, #a0522d 50%, #cd853f 100%);
+            top: 40%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(
-                ellipse at center,
-                rgba(255, 255, 255, 0.06) 0%,
-                rgba(255, 255, 255, 0.02) 25%,
-                transparent 50%
-            );
-            pointer-events: none;
+            animation-delay: -10s;
+            animation-duration: 18s;
         }
 
-        /* Logo container */
-        .logo-container {
-            position: relative;
-            z-index: 2;
-            text-align: center;
+        .fluid-shape-4 {
+            width: 35vw;
+            height: 35vw;
+            background: linear-gradient(180deg, #d2691e 0%, #f4a460 100%);
+            bottom: 10%;
+            left: 10%;
+            animation-delay: -7s;
+            animation-duration: 22s;
         }
 
-        /* Brand Logo - hidden initially, animated in */
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1) rotate(0deg);
+            }
+            25% {
+                transform: translate(5%, 10%) scale(1.05) rotate(5deg);
+            }
+            50% {
+                transform: translate(-5%, 5%) scale(0.95) rotate(-5deg);
+            }
+            75% {
+                transform: translate(8%, -5%) scale(1.02) rotate(3deg);
+            }
+        }
+
+        /* Hero content - positioned like etiq (bottom-left) */
+        .hero-content {
+            position: absolute;
+            bottom: 15%;
+            left: 5%;
+            z-index: 10;
+            padding: 0 20px;
+        }
+
+        /* Logo/Brand text - large like etiq */
         .brand-logo {
             max-width: 280px;
-            width: 60%;
+            width: 50vw;
             height: auto;
             filter: brightness(0) invert(1);
-            visibility: hidden;
+            opacity: 0;
+            transform: translateY(60px);
         }
 
-        /* Tagline below logo (optional, like etiq's "Tandartsen") */
+        .brand-text {
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            opacity: 0;
+            transform: translateY(60px);
+        }
+
         .tagline {
-            margin-top: 1.5rem;
-            font-size: 1.5rem;
+            margin-top: 1rem;
+            font-size: clamp(1rem, 3vw, 1.5rem);
             font-weight: 300;
-            letter-spacing: 0.3em;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
             opacity: 0;
-            visibility: hidden;
+            transform: translateY(40px);
         }
 
-        /* Scroll indicator */
+        /* Scroll indicator - bottom center */
         .scroll-indicator {
             position: absolute;
             bottom: 40px;
@@ -105,135 +166,162 @@
             align-items: center;
             gap: 12px;
             opacity: 0;
-            visibility: hidden;
+            z-index: 10;
             cursor: pointer;
-            transition: opacity 0.3s ease;
         }
 
-        .scroll-indicator:hover {
-            opacity: 0.8 !important;
+        .scroll-btn {
+            background: var(--accent);
+            color: var(--primary-green);
+            border: none;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .scroll-text {
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .scroll-arrow {
-            width: 24px;
-            height: 24px;
-            border-right: 2px solid rgba(255, 255, 255, 0.7);
-            border-bottom: 2px solid rgba(255, 255, 255, 0.7);
-            transform: rotate(45deg);
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: rotate(45deg) translateY(0);
-            }
-            40% {
-                transform: rotate(45deg) translateY(8px);
-            }
-            60% {
-                transform: rotate(45deg) translateY(4px);
-            }
+        .scroll-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         /* ============================================
-         * MAIN CONTENT SECTION
-         * - Slides up and covers the hero
-         * - Has rounded top corners like etiq.nl
-         * - Light background
+         * MAIN CONTENT - Slides up with rounded corners
          * ============================================ */
         .main-content {
             position: relative;
             z-index: 10;
             margin-top: 100vh;
             margin-top: calc(var(--vh, 1vh) * 100);
-            background-color: #faf9f6;
-            min-height: 100vh;
+            background-color: var(--cream);
+            min-height: 150vh;
             border-radius: 40px 40px 0 0;
-            overflow: hidden;
         }
 
-        /* Inner content with padding */
         .content-inner {
-            padding: 80px 40px 60px;
-            max-width: 800px;
+            padding: 100px 8% 80px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .content-inner h2 {
-            font-size: 2.5rem;
-            font-weight: 400;
-            color: #1c3f3a;
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--primary-green);
             margin-bottom: 24px;
+            opacity: 0.7;
+        }
+
+        .content-inner h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 400;
+            color: var(--primary-green);
             line-height: 1.2;
+            max-width: 700px;
+            font-style: italic;
         }
 
-        .content-inner p {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            color: #333;
-            margin-bottom: 20px;
+        .cta-button {
+            display: inline-block;
+            margin-top: 40px;
+            background: var(--primary-green);
+            color: #fff;
+            padding: 18px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        .content-inner .highlight {
-            color: #1c3f3a;
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(28, 63, 58, 0.3);
+        }
+
+        /* Rating card - like etiq */
+        .rating-card {
+            position: absolute;
+            right: 8%;
+            top: 100px;
+            background: var(--primary-green);
+            color: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 280px;
+        }
+
+        .rating-number {
+            font-size: 4rem;
+            font-weight: 300;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .rating-title {
+            font-size: 1.1rem;
+            margin-top: 10px;
             font-weight: 500;
         }
 
-        /* Additional section */
+        .rating-stars {
+            margin-top: 15px;
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* Second section */
         .features-section {
-            background-color: #fff;
-            padding: 80px 40px;
+            padding: 100px 8%;
+            background: #fff;
         }
 
         .features-section h3 {
-            text-align: center;
-            font-size: 1.75rem;
-            color: #1c3f3a;
-            margin-bottom: 40px;
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-bottom: 50px;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
         }
 
-        .feature-card {
-            background: #faf9f6;
-            padding: 30px;
-            border-radius: 16px;
-            text-align: center;
-        }
-
-        .feature-card h4 {
-            color: #1c3f3a;
+        .feature-item h4 {
+            font-size: 1.1rem;
+            color: var(--primary-green);
             margin-bottom: 12px;
-            font-size: 1.125rem;
         }
 
-        .feature-card p {
+        .feature-item p {
             color: #666;
-            font-size: 0.95rem;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .brand-logo {
-                max-width: 200px;
+        @media (max-width: 1024px) {
+            .rating-card {
+                position: relative;
+                right: auto;
+                top: auto;
+                margin-top: 60px;
+                max-width: 100%;
             }
+        }
 
-            .tagline {
-                font-size: 1.125rem;
+        @media (max-width: 768px) {
+            .hero-content {
+                bottom: 20%;
+                left: 0;
+                right: 0;
+                text-align: center;
             }
 
             .main-content {
@@ -241,75 +329,79 @@
             }
 
             .content-inner {
-                padding: 60px 24px 40px;
+                padding: 60px 24px 60px;
             }
 
-            .content-inner h2 {
-                font-size: 1.875rem;
+            .fluid-shape {
+                filter: blur(60px);
             }
         }
     </style>
 </head>
 <body>
-    <!-- HERO SECTION - Fixed behind content -->
+    <!-- HERO SECTION -->
     <section class="hero-section">
-        <div class="logo-container">
-            <!-- Your Logo -->
-            <img 
-                class="brand-logo" 
-                src="assets/logos/logo.png" 
-                alt="Your Dental Clinic"
-            >
-            <!-- Optional tagline like etiq's "Tandartsen" -->
+        <!-- Animated fluid background -->
+        <div class="fluid-background">
+            <div class="fluid-shape fluid-shape-1"></div>
+            <div class="fluid-shape fluid-shape-2"></div>
+            <div class="fluid-shape fluid-shape-3"></div>
+            <div class="fluid-shape fluid-shape-4"></div>
+        </div>
+
+        <!-- Hero content - bottom left like etiq -->
+        <div class="hero-content">
+            <img class="brand-logo" src="assets/logos/logo.png" alt="Logo">
             <p class="tagline">Dental Care</p>
         </div>
 
-        <!-- Scroll indicator -->
-        <div class="scroll-indicator" onclick="scrollToContent()">
-            <span class="scroll-text">Scroll voor meer info</span>
-            <div class="scroll-arrow"></div>
+        <!-- Scroll button -->
+        <div class="scroll-indicator">
+            <button class="scroll-btn" onclick="scrollToContent()">Scroll voor meer info</button>
         </div>
     </section>
 
-    <!-- MAIN CONTENT - Slides up and covers hero -->
+    <!-- MAIN CONTENT - slides up over hero -->
     <main class="main-content">
         <div class="content-inner">
-            <h2>Premium dental care with a personal touch</h2>
-            <p>
-                Experience the difference that <span class="highlight">attention and expertise</span> 
-                can make for your smile. We listen to your wishes, look beyond your teeth, 
-                and together create the result that suits you.
-            </p>
-            <p>
-                For a healthy mouth and an amazing smile. That is our promise to you.
-            </p>
+            <p class="section-label">Our Promise</p>
+            <h2>Only with genuine interest and personal attention will you get the result that makes you happy.</h2>
+            <a href="#" class="cta-button">Book Appointment</a>
+
+            <div class="rating-card">
+                <div class="rating-number">9.4</div>
+                <div class="rating-title">Customer Ratings</div>
+                <div class="rating-stars">★★★★★</div>
+                <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.8;">270 reviews</p>
+            </div>
         </div>
 
         <section class="features-section">
-            <h3>Why Choose Us</h3>
+            <h3>Our Treatments</h3>
             <div class="features-grid">
-                <div class="feature-card">
-                    <h4>Personal Attention</h4>
-                    <p>We take time for each patient to understand your unique needs and desires.</p>
+                <div class="feature-item">
+                    <h4>Aesthetic Dentistry</h4>
+                    <p>Beautiful teeth and good oral health are our passion. All our treatments are aimed at a beautiful, natural result.</p>
                 </div>
-                <div class="feature-card">
-                    <h4>Modern Technology</h4>
-                    <p>State-of-the-art equipment for precise diagnostics and comfortable treatments.</p>
+                <div class="feature-item">
+                    <h4>Dental Treatments</h4>
+                    <p>A radiant smile that suits you perfectly. With a clear treatment plan and the latest techniques.</p>
                 </div>
-                <div class="feature-card">
-                    <h4>Expert Team</h4>
-                    <p>Highly trained specialists with years of experience in aesthetic dentistry.</p>
+                <div class="feature-item">
+                    <h4>Oral Hygiene</h4>
+                    <p>We prefer prevention over cure. Keep your teeth and gums in optimal condition with our hygienists.</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- GSAP Library -->
+    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
     
     <script>
-        // Fix for mobile viewport height (100vh issue)
+        // Fix mobile viewport height
         function setVH() {
             const vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -317,99 +409,76 @@
         setVH();
         window.addEventListener('resize', setVH);
 
-        // Register ScrollTrigger
-        gsap.registerPlugin(ScrollTrigger);
+        // Register plugins
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
         // Elements
         const logo = document.querySelector('.brand-logo');
         const tagline = document.querySelector('.tagline');
         const scrollIndicator = document.querySelector('.scroll-indicator');
+        const heroContent = document.querySelector('.hero-content');
         const mainContent = document.querySelector('.main-content');
 
         // ============================================
-        // INITIAL LOAD ANIMATION (Etiq-style)
-        // Logo fades up and in on page load
+        // LOAD ANIMATION - Etiq style
         // ============================================
         window.addEventListener('load', () => {
-            // Set initial states with GSAP
-            gsap.set(logo, { 
-                visibility: 'visible', 
-                opacity: 0, 
-                y: 60,
-                scale: 0.95
-            });
-            gsap.set(tagline, { 
-                visibility: 'visible', 
-                opacity: 0, 
-                y: 30 
-            });
-            gsap.set(scrollIndicator, { 
-                visibility: 'visible', 
-                opacity: 0, 
-                y: 20 
-            });
-
-            // Create timeline for load animation
             const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-            // Logo animates in first
+            // Logo fades up
             tl.to(logo, {
                 opacity: 1,
                 y: 0,
-                scale: 1,
                 duration: 1.2,
-                delay: 0.3
+                delay: 0.2
             })
             // Tagline follows
             .to(tagline, {
                 opacity: 1,
                 y: 0,
-                duration: 0.8
-            }, '-=0.6')
-            // Scroll indicator appears last
+                duration: 0.9
+            }, '-=0.7')
+            // Scroll button appears
             .to(scrollIndicator, {
                 opacity: 1,
-                y: 0,
                 duration: 0.6
-            }, '-=0.3');
+            }, '-=0.4');
         });
 
         // ============================================
-        // SCROLL ANIMATION (Etiq-style)
-        // Hero content fades out as you scroll
+        // SCROLL ANIMATION - Hero fades as content covers
         // ============================================
-        gsap.to('.logo-container', {
+        gsap.to(heroContent, {
             scrollTrigger: {
-                trigger: '.main-content',
+                trigger: mainContent,
                 start: 'top bottom',
-                end: 'top 30%',
+                end: 'top 20%',
                 scrub: 0.5
             },
             opacity: 0,
-            y: -50,
-            scale: 0.95
+            y: -80,
+            scale: 0.9
         });
 
-        gsap.to('.scroll-indicator', {
+        gsap.to(scrollIndicator, {
             scrollTrigger: {
-                trigger: '.main-content',
-                start: 'top 90%',
+                trigger: mainContent,
+                start: 'top 95%',
                 end: 'top 70%',
                 scrub: 0.3
             },
-            opacity: 0
+            opacity: 0,
+            y: -30
         });
 
-        // Scroll to content function
+        // Scroll to content
         function scrollToContent() {
             gsap.to(window, {
                 scrollTo: { y: mainContent, offsetY: 0 },
-                duration: 1,
+                duration: 1.2,
                 ease: 'power2.inOut'
             });
         }
     </script>
-    <!-- ScrollTo plugin for smooth scroll -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 </body>
 </html>
