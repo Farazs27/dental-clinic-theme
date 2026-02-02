@@ -2,10 +2,17 @@
 // SUPABASE CONFIGURATION
 // ================================
 
-// Supabase configuration
-const SUPABASE_URL = 'https://xvjpbujolbeatyqetsjz.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh2anBidWpvbGJlYXR5cWV0c2p6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk3MTA4MDYsImV4cCI6MjA4NTI4NjgwNn0.vUl9pIsk0oYfKZu0J2r6Uw1ITqvAtEIZyAwbc00g35Y';
-const BLOG_TABLE_NAME = 'blog_posts'; // Your existing table name in Supabase
+// Supabase configuration - Edit these values in js/config.js
+// Get your Supabase credentials at: https://supabase.com/
+const SUPABASE_URL = (window.SITE_CONFIG && window.SITE_CONFIG.api && window.SITE_CONFIG.api.supabase) 
+    ? window.SITE_CONFIG.api.supabase.url 
+    : 'YOUR_SUPABASE_URL_HERE';
+const SUPABASE_ANON_KEY = (window.SITE_CONFIG && window.SITE_CONFIG.api && window.SITE_CONFIG.api.supabase) 
+    ? window.SITE_CONFIG.api.supabase.anonKey 
+    : 'YOUR_SUPABASE_ANON_KEY_HERE';
+const BLOG_TABLE_NAME = (window.SITE_CONFIG && window.SITE_CONFIG.api && window.SITE_CONFIG.api.supabase) 
+    ? window.SITE_CONFIG.api.supabase.tableName 
+    : 'blog_posts';
 
 // Initialize Supabase client (loaded from CDN in HTML)
 // Note: Add this script tag to your HTML files before blog.js:
@@ -113,12 +120,14 @@ function createBlogCard(blog) {
     // Map fields from your blog_posts table structure
     const publishedDate = formatDate(blog.date || blog.created_at);
     const excerpt = blog.meta_description || truncateText(stripHtml(blog.content), 150);
-    const author = 'Drs. Farbod Sharifi'; // Always show Farbod as author on the website
+    const author = (window.SITE_CONFIG && window.SITE_CONFIG.team && window.SITE_CONFIG.team.dentists && window.SITE_CONFIG.team.dentists[0]) 
+        ? window.SITE_CONFIG.team.dentists[0].name 
+        : 'Clinic Team';
     const category = blog.category || 'Algemeen';
     const slug = blog.slug || blog.id;
     
-    // Use featured image or fallback to team image
-    const imageUrl = blog.featured_image || 'assets/team/farbod-sharifi.jpg';
+    // Use featured image or fallback to placeholder
+    const imageUrl = blog.featured_image || 'assets/team/dentist-1.jpg';
     
     return `
         <article class="blog-card" style="opacity: 0; transform: translateY(30px); transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);">
@@ -215,7 +224,8 @@ function displayBlogDetail(blog) {
     detailEl.style.display = 'block';
     
     // Update page title and meta
-    document.getElementById('pageTitle').textContent = `${blog.title} - Mondzorg Sloterweg`;
+    const siteName = (window.SITE_CONFIG && window.SITE_CONFIG.business) ? window.SITE_CONFIG.business.name : 'Dental Clinic';
+    document.getElementById('pageTitle').textContent = `${blog.title} - ${siteName}`;
     document.getElementById('pageDescription').setAttribute('content', blog.meta_description || truncateText(stripHtml(blog.content), 160));
     
     // Update hero section
@@ -355,39 +365,43 @@ function showError(message) {
 // ================================
 
 function getDemoBlogs() {
+    const authorName = (window.SITE_CONFIG && window.SITE_CONFIG.team && window.SITE_CONFIG.team.dentists && window.SITE_CONFIG.team.dentists[0]) 
+        ? window.SITE_CONFIG.team.dentists[0].name 
+        : 'Clinic Team';
+    
     return [
         {
             id: 'demo-1',
             slug: 'demo-1',
-            title: 'De voordelen van biomimetische tandheelkunde',
-            excerpt: 'Ontdek waarom biomimetische tandheelkunde de toekomst is van moderne tandheelkundige zorg en hoe het uw natuurlijke gebit behoudt.',
-            content: '<p>Biomimetische tandheelkunde is een revolutionair concept...</p>',
+            title: 'The Benefits of Biomimetic Dentistry',
+            excerpt: 'Discover why biomimetic dentistry is the future of modern dental care and how it preserves your natural teeth.',
+            content: '<p>Biomimetic dentistry is a revolutionary concept that focuses on preserving as much of your natural tooth structure as possible...</p>',
             published_at: '2026-01-15',
-            author: 'Drs. Farbod Sharifi',
-            category: 'Behandelingen',
-            featured_image: 'assets/team/farbod-sharifi.jpg'
+            author: authorName,
+            category: 'Treatments',
+            featured_image: 'assets/team/dentist-1.jpg'
         },
         {
             id: 'demo-2',
             slug: 'demo-2',
-            title: 'Invisalign: Is het iets voor u?',
-            excerpt: 'Alles wat u moet weten over Invisalign behandelingen, van de eerste consultatie tot het eindresultaat.',
-            content: '<p>Invisalign biedt een moderne aanpak voor rechte tanden...</p>',
+            title: 'Invisalign: Is It Right for You?',
+            excerpt: 'Everything you need to know about Invisalign treatments, from your first consultation to the final result.',
+            content: '<p>Invisalign offers a modern approach to straightening teeth with virtually invisible aligners...</p>',
             published_at: '2026-01-10',
-            author: 'Drs. Farbod Sharifi',
-            category: 'Orthodontie',
-            featured_image: 'assets/team/farbod-sharifi.jpg'
+            author: authorName,
+            category: 'Orthodontics',
+            featured_image: 'assets/team/dentist-1.jpg'
         },
         {
             id: 'demo-3',
             slug: 'demo-3',
-            title: 'Tips voor optimale mondgezondheid',
-            excerpt: 'Praktische tips en adviezen van onze tandartsen voor een gezonde mond en een stralende glimlach.',
-            content: '<p>Goede mondverzorging begint thuis...</p>',
+            title: 'Tips for Optimal Oral Health',
+            excerpt: 'Practical tips and advice from our dentists for a healthy mouth and a radiant smile.',
+            content: '<p>Good oral care starts at home. Here are our top recommendations...</p>',
             published_at: '2026-01-05',
-            author: 'Drs. Farbod Sharifi',
-            category: 'Preventie',
-            featured_image: 'assets/team/farbod-sharifi.jpg'
+            author: authorName,
+            category: 'Prevention',
+            featured_image: 'assets/team/dentist-1.jpg'
         }
     ];
 }
@@ -573,7 +587,8 @@ window.addEventListener('beforeunload', () => {
 function shareVia(platform) {
     const currentUrl = window.location.href;
     const pageTitle = document.title;
-    const description = document.querySelector('meta[name="description"]')?.content || 'Lees dit artikel van Mondzorg Sloterweg';
+    const siteName = (window.SITE_CONFIG && window.SITE_CONFIG.business) ? window.SITE_CONFIG.business.name : 'Our Dental Blog';
+    const description = document.querySelector('meta[name="description"]')?.content || `Read this article from ${siteName}`;
     
     let shareUrl = '';
     

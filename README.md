@@ -1,209 +1,179 @@
-# Mondzorg Sloterweg - Premium Website
+# Premium Dental Clinic HTML Template
 
-Een modern, luxe en professioneel website voor Mondzorg Sloterweg, geïnspireerd door het Oral Design Beverly Hills design maar met een eigen Nederlandse premium identiteit.
+A modern, elegant HTML template designed specifically for dental clinics and dental practices. Built with a focus on aesthetics, user experience, and conversion optimization.
 
-## 🎨 Design Kenmerken
+![Dental Clinic Template Preview](assets/hero-bg.jpg)
 
-### Premium Kleurenpalet
-- **Primary Gold**: #C8A882 - Luxe goud voor accenten
-- **Primary Dark**: #1a1a1a - Diep zwart voor contrast
-- **Light Cream**: #F7F5F2 - Warme achtergrondkleur
-- **Pure White**: #FFFFFF - Schone, heldere achtergrond
+## Features
 
-### Typografie
-- **Serif Font**: Cormorant Garamond - Voor headings (elegant en klassiek)
-- **Sans-serif Font**: Montserrat - Voor body tekst (modern en leesbaar)
+- **Modern Design**: Clean, professional look with smooth animations
+- **Fully Responsive**: Works perfectly on desktop, tablet, and mobile
+- **10 Pre-built Pages**: Homepage, Treatments, Team, Contact, Pricing, and more
+- **Easy Customization**: Edit content directly in HTML files
+- **Fast Loading**: Optimized CSS and minimal JavaScript
+- **SEO Friendly**: Semantic HTML5 structure
+- **Social Media Integration**: Ready for Instagram & TikTok feeds
+- **Contact Forms**: Pre-configured with Web3Forms (free)
+- **Blog Ready**: Optional Supabase integration for blog posts
 
-## 📁 Projectstructuur
+## Pages Included
+
+1. **index.html** - Homepage with hero, services, features, and CTA sections
+2. **behandelingen.html** - Treatments/Services page
+3. **team.html** - Team members showcase
+4. **contact.html** - Contact form, map, and FAQ
+5. **inschrijven.html** - Appointment booking/registration
+6. **tarieven.html** - Pricing tables
+7. **esthetische-analyse.html** - Smile makeover workflow showcase
+8. **mondhygieniste.html** - Dental hygienist dedicated page
+9. **blog.html** - Blog listing page
+10. **blog-detail.html** - Individual blog post page
+
+## Quick Start
+
+### 1. Download and Extract
+Extract the template files to your computer.
+
+### 2. Edit Content
+Open the HTML files in any text editor (VS Code recommended) and replace:
+- Business name and contact information
+- Team member names, photos, and bios
+- Service descriptions
+- Opening hours
+- Address and map location
+
+### 3. Replace Images
+Replace placeholder images in the `assets/` folder:
+- `assets/logos/logo.png` - Your clinic logo
+- `assets/team/` - Team member photos
+- `assets/hero-bg.jpg` - Homepage hero background
+- `assets/icons/` - Service icons
+
+### 4. Configure Forms
+Get a free API key from [Web3Forms](https://web3forms.com/) and replace `YOUR_WEB3FORMS_ACCESS_KEY` in:
+- `contact.html`
+- `inschrijven.html`
+
+### 5. Deploy
+Upload all files to your web hosting or use services like:
+- [Netlify](https://netlify.com) (free)
+- [Vercel](https://vercel.com) (free)
+- [GitHub Pages](https://pages.github.com) (free)
+
+## Configuration
+
+### js/config.js
+This file contains all customizable settings:
+
+```javascript
+const SITE_CONFIG = {
+    business: {
+        name: "Your Dental Clinic",
+        tagline: "Premium Dental Care",
+    },
+    contact: {
+        phone: "+1 (555) 123-4567",
+        email: "info@yourdentalclinic.com",
+        whatsapp: "15551234567",
+    },
+    address: {
+        street: "123 Main Street",
+        city: "Your City",
+        // ...
+    },
+    // ... more settings
+};
+```
+
+### Social Media Feeds (Optional)
+To add live Instagram/TikTok feeds:
+1. Create an account at [Elfsight](https://elfsight.com/)
+2. Create Instagram and/or TikTok widgets
+3. Replace `YOUR_INSTAGRAM_WIDGET_ID` and `YOUR_TIKTOK_WIDGET_ID` in the HTML files
+
+### Blog Integration (Optional)
+The template includes an optional blog system using Supabase:
+1. Create a free account at [Supabase](https://supabase.com/)
+2. Create a `blog_posts` table
+3. Add your Supabase URL and anon key to `js/config.js`
+
+## File Structure
 
 ```
-MondzorgSloterweg New Website/
+dental-clinic-theme/
 ├── index.html              # Homepage
-├── behandelingen.html      # Behandelingen overzicht
-├── team.html              # Team pagina
-├── inschrijven.html       # Inschrijf/registratie formulier
-├── tarieven.html          # Prijzen overzicht
-├── contact.html           # Contact pagina
+├── behandelingen.html      # Treatments page
+├── team.html               # Team page
+├── contact.html            # Contact page
+├── inschrijven.html        # Booking page
+├── tarieven.html           # Pricing page
+├── esthetische-analyse.html # Smile makeover page
+├── mondhygieniste.html     # Hygienist page
+├── blog.html               # Blog listing
+├── blog-detail.html        # Blog post detail
 ├── css/
-│   └── style.css          # Alle styling
+│   └── style.css           # All styles
 ├── js/
-│   └── main.js            # JavaScript functionaliteit
-├── assets/
-│   ├── icons/             # Iconen voor diensten
-│   ├── team/              # Team foto's
-│   └── (andere afbeeldingen)
-└── README.md              # Deze file
+│   ├── config.js           # Configuration file
+│   ├── main.js             # Main JavaScript
+│   ├── blog.js             # Blog functionality
+│   └── tarieven.js         # Pricing table logic
+└── assets/
+    ├── logos/              # Logo files
+    ├── team/               # Team photos
+    ├── icons/              # Service icons
+    ├── marquee/            # Partner logos
+    └── [workflow images]   # Smile makeover images
 ```
 
-## 🌟 Pagina's
+## Customization Guide
 
-### 1. Homepage (index.html)
-- Hero sectie met grote impact
-- Over Mondzorg Sloterweg
-- Service preview met 6 diensten
-- Features (Passie, Technieken, Natuurlijke Look)
-- Persoonlijk advies sectie
-- Media coverage
-- Certificeringen
-- Footer met contactinformatie
+### Changing Colors
+Edit CSS variables in `css/style.css`:
 
-### 2. Behandelingen (behandelingen.html)
-Uitgebreide behandelingencatalogus georganiseerd in categorieën:
-- Algemene Tandheelkunde
-- Mondhygiëne
-- Esthetische Tandheelkunde
-- Implantologie
-- Orthodontie
-- Kronen & Bruggen
-- Spoedzorg
-
-### 3. Ons Team (team.html)
-- Team introductie
-- 6 teamleden met foto's en specialisaties:
-  - Dr. Farbod Sharifi (Tandarts & Eigenaar)
-  - Dr. Sarah van den Berg (Tandarts)
-  - Linda Jansen (Mondhygiënist)
-  - Mark de Vries (Tandarts Implantoloog)
-  - Emma Bakker (Orthodontist)
-  - Sophie Peters (Mondhygiënist)
-- Filosofie sectie (Biomimetisch, Minimaal Invasief, etc.)
-
-### 4. Inschrijven (inschrijven.html)
-Uitgebreid registratieformulier met:
-- Persoonlijke gegevens
-- Adresgegevens
-- Verzekeringsinformatie
-- Behandeling voorkeuren
-- Medische informatie
-- Privacy & toestemming checkboxes
-- Info sectie over eerste consult en spoedzorg
-
-### 5. Tarieven (tarieven.html)
-Transparante prijsoverzicht met:
-- Algemene tandheelkunde prijzen
-- Mondhygiëne behandelingen
-- Esthetische tandheelkunde (veneers, bonding, bleaching)
-- Implantologie & reconstructies
-- Orthodontie (Invisalign, beugels)
-- Verzekeringsinformatie
-- Betalingsmogelijkheden
-
-### 6. Contact (contact.html)
-- Contactinformatie
-- Contact formulier
-- Google Maps integratie
-- Bereikbaarheid informatie (auto, OV, fiets)
-- FAQ sectie
-
-## 🎯 Features
-
-### Responsive Design
-- Volledig responsive voor alle schermformaten
-- Mobile-first approach
-- Hamburger menu voor mobiel
-
-### Animaties
-- Smooth scroll
-- Fade-in effecten bij scroll
-- Hover effecten op cards en buttons
-- Loading states voor formulieren
-
-### Formulieren
-- Client-side validatie
-- Notification systeem
-- Gebruiksvriendelijke error handling
-
-### Cookie Consent
-- Automatische cookie consent popup
-- LocalStorage voor preferences
-
-### Navigation
-- Sticky navigation bar
-- Active page highlighting
-- Smooth transitions
-
-## 🖼️ Afbeeldingen Toevoegen
-
-### Hero Afbeeldingen
-Plaats in `/assets/`:
-- `hero-bg.jpg` - Homepage hero achtergrond
-- `page-hero-bg.jpg` - Subpagina's hero achtergrond
-
-### Team Foto's
-Plaats in `/assets/team/`:
-- `farbod-sharifi.jpg`
-- `team-member-2.jpg`
-- `team-member-3.jpg`
-- `team-member-4.jpg`
-- `team-member-5.jpg`
-- `team-member-6.jpg`
-
-Aanbevolen formaat: 800x1000px, verticale portretten
-
-### Service Iconen
-Plaats in `/assets/icons/`:
-- `orthodontics.svg`
-- `tooth-pain.svg`
-- `hygiene.svg`
-- `implant.svg`
-- `veneers.svg`
-- `emergency.svg`
-
-## 🚀 Deployment
-
-### Lokaal Testen
-1. Open `index.html` in je browser
-2. Of gebruik een lokale server:
-   ```bash
-   python -m http.server 8000
-   ```
-3. Bezoek `http://localhost:8000`
-
-### Live Deployment
-Upload alle bestanden naar je webserver via FTP of hosting control panel.
-
-Zorg ervoor dat de mapstructuur behouden blijft.
-
-## 🔧 Aanpassingen
-
-### Kleuren Wijzigen
-Bewerk de CSS variabelen in `css/style.css`:
 ```css
 :root {
-    --primary-gold: #C8A882;
-    --primary-dark: #1a1a1a;
-    /* etc. */
+    --primary-gold: #b8a369;    /* Accent color */
+    --primary-dark: #1a1a1a;    /* Dark text */
+    --off-white: #faf9f6;       /* Background */
+    /* ... more variables */
 }
 ```
 
-### Teksten Aanpassen
-Bewerk de HTML bestanden direct. Alle teksten zijn in het Nederlands en komen van de originele website.
+### Changing Fonts
+The template uses Google Fonts (Baskervville). To change:
+1. Go to [Google Fonts](https://fonts.google.com/)
+2. Select your font and get the embed code
+3. Replace the font link in all HTML `<head>` sections
+4. Update `--font-body` in `css/style.css`
 
-### Formulier Integratie
-De formulieren zijn momenteel client-side. Voor echte functionaliteit:
-1. Voeg een backend toe (PHP, Node.js, etc.)
-2. Integreer met email service (SendGrid, Mailgun, etc.)
-3. Of gebruik een formulier service (Formspree, Netlify Forms, etc.)
+### Adding New Pages
+1. Copy an existing HTML file
+2. Update the content
+3. Add navigation link to all pages' `<nav>` section
 
-## 📱 Browser Ondersteuning
+## Browser Support
 
-- Chrome (laatste 2 versies)
-- Firefox (laatste 2 versies)
-- Safari (laatste 2 versies)
-- Edge (laatste 2 versies)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome for Android)
 
-## 📝 Licentie
+## Credits
 
-© 2025 Mondzorg Sloterweg - Alle rechten voorbehouden
+- Font: [Baskervville](https://fonts.google.com/specimen/Baskervville) by Google Fonts
+- Icons: Custom SVG icons included
+- Form handling: [Web3Forms](https://web3forms.com/)
 
-## 🆘 Support
+## Support
 
-Voor vragen of ondersteuning, neem contact op met het ontwikkelteam.
+For questions or customization help, please contact the theme author.
+
+## License
+
+This template is licensed for use on a single website. Please do not redistribute or resell.
 
 ---
 
-**Ontwikkeld met**: HTML5, CSS3, JavaScript (Vanilla)
-**Design Inspiratie**: Oral Design Beverly Hills
-**Fonts**: Google Fonts (Cormorant Garamond, Montserrat)
-
+**Thank you for purchasing this template!**
